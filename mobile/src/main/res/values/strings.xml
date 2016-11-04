@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AndroidDemos</string>
     <string name="rotate_dream_service">Rotate Sahil Gupta</string>
+    <string name="activity_label_rotate_dream_settings">Settings</string>
 </resources>
