@@ -8,7 +8,6 @@ import sahilguptalive.com.androiddemos.R;
 
 public class RotateDreamService extends DreamService {
 
-
     private ObjectAnimator mTextAnimator;
 
     @Override
