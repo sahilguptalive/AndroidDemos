@@ -1,8 +1,11 @@
 package sahilguptalive.com.androiddemos;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import sahilguptalive.com.androiddemos.scopped_acess.ScopedDirectoryAccess;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -16,14 +19,17 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
     }
 
     /**
      * A native method that is implemented by the 'native-lib' native library,
      * which is packaged with this application.
      */
+    @NonNull
     public native String stringFromJNI();
+
+    public void onClickScopedAccess(View view) {
+        Intent intent = new Intent(this, ScopedDirectoryAccess.class);
+        startActivity(intent);
+    }
 }

@@ -3,11 +3,13 @@ package sahilguptalive.com.androiddemos.dream;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.service.dreams.DreamService;
+import android.support.annotation.Nullable;
 import android.widget.TextView;
 import sahilguptalive.com.androiddemos.R;
 
 public class RotateDreamService extends DreamService {
 
+    @Nullable
     private ObjectAnimator mTextAnimator;
 
     @Override
