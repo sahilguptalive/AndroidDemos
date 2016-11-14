@@ -112,6 +112,7 @@ public class ScopedDirectoryAccess extends AppCompatActivity {
         ContentResolver contentResolver = this.getContentResolver();
         final String treeDocumentId = DocumentsContract.getTreeDocumentId(directoryUri);
         //Initialize directory content uri
+        //We use Tree to build document so that we do not have to ask for permissions again for sub-dir access.
         Uri docChildrenUri = DocumentsContract.buildChildDocumentsUriUsingTree(directoryUri, treeDocumentId);
         //query from content resolver to get directory children info
         try (Cursor cursor
@@ -149,6 +150,7 @@ public class ScopedDirectoryAccess extends AppCompatActivity {
         ContentResolver contentResolver = this.getContentResolver();
         final String treeDocumentId = DocumentsContract.getTreeDocumentId(directoryUri);
         //Initialize directory uri
+        //We use Tree to build document so that we do not have to ask for permissions again for sub-dir access.
         Uri docUri = DocumentsContract.buildDocumentUriUsingTree(directoryUri, treeDocumentId);
         //query from content resolver to get directory info
         try (Cursor cursor
