@@ -10,6 +10,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import sahilguptalive.com.androiddemos.R;
+import sahilguptalive.com.androiddemos.contacts.ContactsFragment;
 
 /**
  * This activity would demonstrate the new marshmallow run time permissions feature.
@@ -130,7 +131,10 @@ public class AndroidRuntimeSystemPermissions extends AppCompatActivity {
     }
 
     private void showContacts() {
-
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.runtime_permissions_frame_layout, new ContactsFragment())
+                .commit();
     }
 
     public void onClickUpdateContactPermission(View view) {
