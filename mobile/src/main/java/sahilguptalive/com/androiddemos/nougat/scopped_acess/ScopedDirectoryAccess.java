@@ -1,4 +1,4 @@
-package sahilguptalive.com.androiddemos.scopped_acess;
+package sahilguptalive.com.androiddemos.nougat.scopped_acess;
 
 import android.annotation.TargetApi;
 import android.app.Activity;

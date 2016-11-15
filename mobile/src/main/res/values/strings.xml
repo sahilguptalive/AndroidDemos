@@ -13,4 +13,21 @@
     <string name="title_activity_scoped_access">ScopedAccess</string>
     <string name="permission_denied">Permission denied. We can not continue the task.</string>
     <string name="director_listing_header">Directory content would be listed here</string>
+    <string name="runtime_permissions_action_contact">Access Contacts</string>
+    <string name="runtime_permissions_action_revoke_contact_permission">Revoke Contact Permission
+    </string>
+    <string name="runtime_permissions_action_update_contact_permission">Update Contact Permission
+    </string>
+    <string name="rationale_for_contact_permission">We need contact permission for demo puposes
+        only. We would not be sharing your details with other apps.
+    </string>
+    <string name="ok">Okay</string>
+    <string name="failure_of_contact_permission">Contact permission request grant has been failed.
+    </string>
+    <string name="success_of_contact_permission">Contact permission request grant has been
+        successful.
+    </string>
+    <string name="contact_permission_update_failed">Contact permission update failed. No contact
+        permission has been granted currently.
+    </string>
 </resources>
