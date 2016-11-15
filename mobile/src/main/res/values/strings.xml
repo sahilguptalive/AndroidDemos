@@ -14,8 +14,6 @@
     <string name="permission_denied">Permission denied. We can not continue the task.</string>
     <string name="director_listing_header">Directory content would be listed here</string>
     <string name="runtime_permissions_action_contact">Access Contacts</string>
-    <string name="runtime_permissions_action_revoke_contact_permission">Revoke Contact Permission
-    </string>
     <string name="runtime_permissions_action_update_contact_permission">Update Contact Permission
     </string>
     <string name="rationale_for_contact_permission">We need contact permission for demo puposes

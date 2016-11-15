@@ -133,7 +133,7 @@ public class AndroidRuntimeSystemPermissions extends AppCompatActivity {
 
     }
 
-    public void onClickRevokeContactPermission(View view) {
+    public void onClickUpdateContactPermission(View view) {
         //Check if permission have been granted or not.
         //If yes revoke them else show failure message
         if (isPermissionGranted(Manifest.permission.READ_CONTACTS)

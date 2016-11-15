@@ -20,8 +20,8 @@
     />
     <Button
             style="@style/runtime_permissions_action"
-            android:text="@string/runtime_permissions_action_revoke_contact_permission"
-            android:onClick="onClickRevokeContactPermission"
+            android:text="@string/runtime_permissions_action_update_contact_permission"
+            android:onClick="onClickUpdateContactPermission"
     />
 
 
