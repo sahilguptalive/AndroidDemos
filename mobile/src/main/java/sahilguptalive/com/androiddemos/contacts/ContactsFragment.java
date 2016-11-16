@@ -29,7 +29,7 @@ public class ContactsFragment extends Fragment implements LoaderManager.LoaderCa
         //Step-3 Initialize list view
         setupListView(view);
         //Step-7 Initialize the loader
-        getActivity().getSupportLoaderManager().initLoader(0, null, this);
+        getLoaderManager().initLoader(0, null, this);
         return view;
     }
 
@@ -61,10 +61,11 @@ public class ContactsFragment extends Fragment implements LoaderManager.LoaderCa
     @Override
     public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         //Step-4a Initialize projection to include all column names which you want to include in the cursor response.
+        //Projection array must include FROM_COLUMNS values, otherwise exception would be thrown.
         final String[] projection = {
-                ContactsContract.CommonDataKinds.Phone._ID
-                , ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME_PRIMARY
-                , ContactsContract.CommonDataKinds.Phone.NUMBER};
+                ContactsContract.CommonDataKinds.Phone._ID,
+                ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME_PRIMARY,
+                ContactsContract.CommonDataKinds.Phone.NUMBER};
         return new CursorLoader(getActivity()
                 , ContactsContract.CommonDataKinds.Phone.CONTENT_URI
                 , projection, null, null, null);
@@ -73,12 +74,17 @@ public class ContactsFragment extends Fragment implements LoaderManager.LoaderCa
     //Step-5
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        // Swap the new cursor in.  (The framework will take care of closing the
+        // old cursor once we return.)
         mContactAdapter.swapCursor(data);
     }
 
     //Step-6
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
+        // This is called when the last Cursor provided to onLoadFinished()
+        // above is about to be closed.  We need to make sure we are no
+        // longer using it.
         mContactAdapter.swapCursor(null);
     }
 }
