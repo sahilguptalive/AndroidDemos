@@ -57,6 +57,19 @@ import java.util.Objects;
  * <p>
  * <strong>adb shell am start -W -a android.intent.action.VIEW -d "https://www.androiddemo.com/productinfo?id=123456" sahilguptalive.com.androiddemos</strong>
  * </p>
+ * Some important points:
+ * <ul>
+ * <li>Same website can be associated with multiple apps</li>
+ * <li>Same app can be associated with multiple websites</li>
+ * <li>When we have any sub-domains in host, we need to host assetlinks.json at all sub-domains.</li>
+ * <li>We request android to auto verify app-links by adding "autoVerify" at at-least one intent filter</li>
+ * <li>Android system verifies app-links by checking hosted Digital Asset Links(assetlinks.json) at specified hosts(and subdomains).
+ * If any one verification fails, then all app-link verification would be considered as "Failed",
+ * irrespective of whether intent filter has specified "autoVerify" as true or not.
+ * And application would not be auto-verified for any app-links mentioned in manifest file.</li>
+ * <li>Android system verifies the hosted Digital Asset file(assetlinks.json) via encrypted HTTPS protocol,
+ * irrespective of whether we have mentioned schema as "https" or not.</li>
+ * </ul>
  *
  * @see <ul>
  * <li><a href="https://developer.android.com/training/app-links/index.html">App Link Ref</a></li>
