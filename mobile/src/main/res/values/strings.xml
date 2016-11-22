@@ -28,4 +28,7 @@
     <string name="contact_permission_update_failed">Contact permission update failed. No contact
         permission has been granted currently.
     </string>
+    <string name="content_description_profile_pic">Profle Picture</string>
+    <string name="hint_user_complete_name">Enter your complete name</string>
+    <string name="hint_user_complete_address">Enter your complete address</string>
 </resources>

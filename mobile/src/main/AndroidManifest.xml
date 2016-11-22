@@ -52,6 +52,27 @@
         </activity>
         <activity android:name=".marshmallow.permissions.AndroidRuntimeSystemPermissions">
         </activity>
+        <activity android:name=".accessibility.AccessibleActivity">
+        </activity>
+        <activity android:name=".deeplinking.ProductInfo" >
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data
+                        android:scheme="http"
+                        android:host="www.androiddemo.com"
+                        android:pathPrefix="/productinfo"
+                />
+                <data
+                        android:scheme="https"
+                        android:host="www.androiddemo.com"
+                        android:pathPrefix="/productinfo"
+                />
+            </intent-filter>
+        </activity>
+        <activity android:name=".deeplinking.UserInfo">
+        </activity>
     </application>
 
 </manifest>

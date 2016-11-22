@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import sahilguptalive.com.androiddemos.accessibility.AccessibleActivity;
 import sahilguptalive.com.androiddemos.marshmallow.permissions.AndroidRuntimeSystemPermissions;
 import sahilguptalive.com.androiddemos.nougat.scopped_acess.ScopedDirectoryAccess;
 
@@ -30,12 +31,19 @@ public class HomeActivity extends AppCompatActivity {
     public native String stringFromJNI();
 
     public void onClickScopedAccess(View view) {
-        Intent intent = new Intent(this, ScopedDirectoryAccess.class);
-        startActivity(intent);
+        startActivity(ScopedDirectoryAccess.class);
     }
 
     public void onClickRuntimePermissions(View view) {
-        Intent intent = new Intent(this, AndroidRuntimeSystemPermissions.class);
+        startActivity(AndroidRuntimeSystemPermissions.class);
+    }
+
+    public void onClickAccessibility(View view) {
+        startActivity(AccessibleActivity.class);
+    }
+
+    private void startActivity(Class<?> activityClass) {
+        Intent intent = new Intent(this, activityClass);
         startActivity(intent);
     }
 }

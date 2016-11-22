@@ -23,4 +23,9 @@
             android:onClick="onClickRuntimePermissions"
             style="@style/home_activity_anchor_text"
     />
+    <TextView
+            android:text="Accessibility Services"
+            android:onClick="onClickAccessibility"
+            style="@style/home_activity_anchor_text"
+    />
 </LinearLayout>
