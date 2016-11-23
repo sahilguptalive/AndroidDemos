@@ -28,4 +28,14 @@
             android:onClick="onClickAccessibility"
             style="@style/home_activity_anchor_text"
     />
+    <TextView
+            android:text="Voice Interaction"
+            android:onClick="onClickVoiceInteraction"
+            style="@style/home_activity_anchor_text"
+    />
+    <TextView
+            android:text="Share Text"
+            android:onClick="onClickShareText"
+            style="@style/home_activity_anchor_text"
+    />
 </LinearLayout>

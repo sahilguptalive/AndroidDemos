@@ -31,4 +31,14 @@
     <string name="content_description_profile_pic">Profle Picture</string>
     <string name="hint_user_complete_name">Enter your complete name</string>
     <string name="hint_user_complete_address">Enter your complete address</string>
+    <string name="choose_target_service">Select target</string>
+    <string name="mime_type_text"></string>
+    <string name="activity_label_receive_shared_text">String Manipulation</string>
+    <string name="no_data_to_display">No data to display</string>
+    <string name="activity_label_print_substring">Print Substrings</string>
+    <string name="action_reverse">Reverse</string>
+    <string name="action_char_count">Character Count</string>
+    <string name="action_remove_extra_space">Remove Extra Space</string>
+    <string name="action_to_uppercase">Uppercase</string>
+    <string name="action_get_word_count">Word Count</string>
 </resources>

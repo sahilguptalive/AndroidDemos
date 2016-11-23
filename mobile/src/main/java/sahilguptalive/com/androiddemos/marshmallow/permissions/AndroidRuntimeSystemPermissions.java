@@ -34,6 +34,7 @@ public class AndroidRuntimeSystemPermissions extends AppCompatActivity {
 
     public void onClickAccessContact(View view) {
         //Step-1 check if SDK is below marshmallow, if yes show contacts directly. Else move to Step-2
+        //This step can be skipped, since we are using app compat activity, which is backward compatible.
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             showContacts();
             return;

@@ -13,7 +13,7 @@ android {
     buildToolsVersion "24.0.2"
     defaultConfig {
         applicationId "sahilguptalive.com.androiddemos"
-        minSdkVersion 21
+        minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"

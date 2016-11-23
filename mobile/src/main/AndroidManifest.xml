@@ -23,11 +23,13 @@
         <activity
                 android:name=".dream.RotateDreamSettings"
                 android:label="@string/activity_label_rotate_dream_settings"/>
+
         <activity
                 android:name=".flipped.FlippedViewActivity"
                 android:exported="true"
                 android:label="Flipped View Activity"/>
         <!-- services -->
+
         <service
                 android:name=".dream.RotateDreamService"
                 android:exported="true"
@@ -50,28 +52,75 @@
                 android:label="@string/title_activity_scoped_access"
                 android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         </activity>
+
         <activity android:name=".marshmallow.permissions.AndroidRuntimeSystemPermissions">
         </activity>
+
         <activity android:name=".accessibility.AccessibleActivity">
         </activity>
-        <activity android:name=".deeplinking.ProductInfo" >
+
+        <activity android:name=".deeplinking.ProductInfo">
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW"/>
+
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <category android:name="android.intent.category.DEFAULT"/>
+
                 <data
-                        android:scheme="http"
                         android:host="www.androiddemo.com"
                         android:pathPrefix="/productinfo"
-                />
+                        android:scheme="http"/>
                 <data
-                        android:scheme="https"
                         android:host="www.androiddemo.com"
                         android:pathPrefix="/productinfo"
-                />
+                        android:scheme="https"/>
             </intent-filter>
         </activity>
+
         <activity android:name=".deeplinking.UserInfo">
+        </activity>
+
+        <activity android:name=".voiceactions.VoiceInteractionDemoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="com.google.android.voicesearch.SELF_NOTE"/>
+            </intent-filter>
+        </activity>
+
+        <service
+                android:name=".directshare.DemoChooserTargetService"
+                android:label="@string/choose_target_service"
+                android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.chooser.ChooserTargetService"/>
+            </intent-filter>
+        </service>
+
+        <activity
+                android:name=".directshare.StringManipulationActivity"
+                android:label="@string/activity_label_receive_shared_text">
+            <meta-data
+                    android:name="android.service.chooser.chooser_target_service"
+                    android:value=".directshare.DemoChooserTargetService"/>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <data android:mimeType="text/plain"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".directshare.ReceiveSharedImageActivity">
+        </activity>
+
+        <activity
+                android:name=".directshare.PrintSubStringsActivity"
+                android:label="@string/activity_label_print_substring">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
         </activity>
     </application>
 
