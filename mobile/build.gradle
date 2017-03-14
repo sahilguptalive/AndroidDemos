@@ -5,12 +5,12 @@ android {
         debug {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
-            storeFile file('/Users/daffomac-17/Documents/SahilGupta/NonClientProjects/AndroidSamples/AndroidDemos/keystore/debug.keystore')
+            storeFile file('../keystore/debug.keystore')
             storePassword 'android'
         }
     }
     compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    buildToolsVersion '25.0.0'
     defaultConfig {
         applicationId "sahilguptalive.com.androiddemos"
         minSdkVersion 16
@@ -49,4 +49,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
 }
