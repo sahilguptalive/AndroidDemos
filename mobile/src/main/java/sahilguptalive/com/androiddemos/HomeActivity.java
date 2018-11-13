@@ -59,4 +59,12 @@ public class HomeActivity extends AppCompatActivity {
         intent.setType("text/plain");
         startActivity(Intent.createChooser(intent, "Share text"));
     }
+
+    public void testJava8(){
+        Lmda l=(int a,int b)->{return a+b;};
+    }
+    public interface Lmda{
+
+        public int add(int a,int b);
+    }
 }

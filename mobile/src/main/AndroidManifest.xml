@@ -4,13 +4,15 @@
 
     <uses-permission android:name="android.permission.READ_CONTACTS"/>
     <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
-            android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
-            android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
 
         <!-- activities -->
         <activity android:name=".HomeActivity">
@@ -21,21 +23,20 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".dream.RotateDreamSettings"
-                android:label="@string/activity_label_rotate_dream_settings"/>
-
+            android:name=".dream.RotateDreamSettings"
+            android:label="@string/activity_label_rotate_dream_settings"/>
         <activity
-                android:name=".flipped.FlippedViewActivity"
-                android:exported="true"
-                android:label="Flipped View Activity"/>
+            android:name=".flipped.FlippedViewActivity"
+            android:exported="true"
+            android:label="Flipped View Activity"/>
         <!-- services -->
 
         <service
-                android:name=".dream.RotateDreamService"
-                android:exported="true"
-                android:icon="@android:drawable/star_on"
-                android:label="@string/rotate_dream_service"
-                android:permission="android.permission.BIND_DREAM_SERVICE">
+            android:name=".dream.RotateDreamService"
+            android:exported="true"
+            android:icon="@android:drawable/star_on"
+            android:label="@string/rotate_dream_service"
+            android:permission="android.permission.BIND_DREAM_SERVICE">
             <intent-filter>
                 <action android:name="android.service.dreams.DreamService"/>
 
@@ -43,22 +44,19 @@
             </intent-filter>
 
             <meta-data
-                    android:name="android.service.dream"
-                    android:resource="@xml/service_dream"/>
+                android:name="android.service.dream"
+                android:resource="@xml/service_dream"/>
         </service>
 
         <activity
-                android:name=".nougat.scopped_acess.ScopedDirectoryAccess"
-                android:label="@string/title_activity_scoped_access"
-                android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            android:name=".nougat.scopped_acess.ScopedDirectoryAccess"
+            android:label="@string/title_activity_scoped_access"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         </activity>
-
         <activity android:name=".marshmallow.permissions.AndroidRuntimeSystemPermissions">
         </activity>
-
         <activity android:name=".accessibility.AccessibleActivity">
         </activity>
-
         <activity android:name=".deeplinking.ProductInfo">
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW"/>
@@ -67,19 +65,17 @@
                 <category android:name="android.intent.category.DEFAULT"/>
 
                 <data
-                        android:host="www.androiddemo.com"
-                        android:pathPrefix="/productinfo"
-                        android:scheme="http"/>
+                    android:host="www.androiddemo.com"
+                    android:pathPrefix="/productinfo"
+                    android:scheme="http"/>
                 <data
-                        android:host="www.androiddemo.com"
-                        android:pathPrefix="/productinfo"
-                        android:scheme="https"/>
+                    android:host="www.androiddemo.com"
+                    android:pathPrefix="/productinfo"
+                    android:scheme="https"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".deeplinking.UserInfo">
         </activity>
-
         <activity android:name=".voiceactions.VoiceInteractionDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
@@ -89,38 +85,45 @@
         </activity>
 
         <service
-                android:name=".directshare.DemoChooserTargetService"
-                android:label="@string/choose_target_service"
-                android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
+            android:name=".directshare.DemoChooserTargetService"
+            android:label="@string/choose_target_service"
+            android:permission="android.permission.BIND_CHOOSER_TARGET_SERVICE">
             <intent-filter>
                 <action android:name="android.service.chooser.ChooserTargetService"/>
             </intent-filter>
         </service>
 
         <activity
-                android:name=".directshare.StringManipulationActivity"
-                android:label="@string/activity_label_receive_shared_text">
+            android:name=".directshare.StringManipulationActivity"
+            android:label="@string/activity_label_receive_shared_text">
             <meta-data
-                    android:name="android.service.chooser.chooser_target_service"
-                    android:value=".directshare.DemoChooserTargetService"/>
+                android:name="android.service.chooser.chooser_target_service"
+                android:value=".directshare.DemoChooserTargetService"/>
+
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
+
                 <data android:mimeType="text/plain"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".directshare.ReceiveSharedImageActivity">
         </activity>
-
         <activity
-                android:name=".directshare.PrintSubStringsActivity"
-                android:label="@string/activity_label_print_substring">
+            android:name=".directshare.PrintSubStringsActivity"
+            android:label="@string/activity_label_print_substring">
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
+
                 <data android:mimeType="text/plain"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".android_26.picture_in_picture_mode.VideoListActivity"
+            android:exported="true">
         </activity>
     </application>
 

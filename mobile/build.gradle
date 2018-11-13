@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 
 android {
     signingConfigs {
@@ -9,6 +11,7 @@ android {
             storePassword 'android'
         }
     }
+
     compileSdkVersion 24
     buildToolsVersion '25.0.0'
     defaultConfig {
@@ -25,6 +28,10 @@ android {
         }
         signingConfig signingConfigs.debug
     }
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
     buildTypes {
         release {
             minifyEnabled false
@@ -36,7 +43,29 @@ android {
             path "CMakeLists.txt"
         }
     }
-    productFlavors {
+//    productFlavors {
+//        jackSahil {
+//            jackOptions {
+//                enabled true
+//                additionalParameters("jack.java.source.version": "1.8")
+//                additionalParameters("jack.obfuscation.renamesourcefile": "true")
+//                additionalParameters("jack.obfuscation.packagedictionary": "false")
+//                additionalParameters("jack.obfuscation.mapping": "true")
+//                additionalParameters("jack.obfuscation.mapping.file": "obfuscation_mapping.txt")
+//                additionalParameters("jack.obfuscation.flattenpackage": "true")
+//                additionalParameters("jack.obfuscation.flattenpackage.package": "test.pack.name")
+//
+//            }
+//        }
+//        dvm {
+//            jackOptions {
+//                enabled true
+//            }
+//        }
+//    }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 }
 
@@ -50,4 +79,7 @@ dependencies {
     compile 'com.android.support:design:24.2.1'
     testCompile 'junit:junit:4.12'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    api "com.android.support:appcompat-v7:24.0.0"
+
 }
